@@ -1,16 +1,172 @@
 $(document).ready(function () {
-
+    //*************************************************************************************************
+    //Question 1
+    question03();
+    question02();
+    question01();
+    function question01()  {
     $("#startButton").click(function () {
         console.log("start");
         $("#startButton").remove();
+        $(".question").text(questions[0]);
+        var answers1 = ["Yosemite NP", "Glacier NP", "Yellowstone NP", "Rocky Mountain NP"];
+            $(".answer-a").text(answers1[0]);
+            $(".answer-b").text(answers1[1]);
+            $(".answer-c").text(answers1[2]);
+            $(".answer-d").text(answers1[3]);
+            run();
+
+            function clearData ()  {
+                $(".question").remove();
+                $(".answer-a").remove(); 
+                $(".answer-b").remove();
+                $(".answer-c").remove();
+                $(".answer-d").remove();
+                question02();
+                run();
+                stop();
+                } //Ends clearData function
+               
+
+            $(".answer-c").click(function ()  {
+                alert ("You are correct!");
+                clearData();
+            })
+            $(".answer-a").click(function () { 
+                alert ("Wrong! The correct answer is Yellowstone NP")
+                clearData();
+
+            })
+
+            $(".answer-b").click(function () { 
+                alert ("Wrong! The correct answer is Yellowstone NP")
+                clearData();
+            })
+
+            $(".answer-d").click(function () { 
+                alert ("Wrong! The correct answer is Yellowstone NP")
+                clearData();
+            })   
     });
+    }//Ends question01 function
+
+     //*************************************************************************************************
+     //Question 2
+     function question02()  {
++   $("#startButton").click(function () {
+    console.log("start");
+    $("#startButton").remove();
+    $(".question").text(questions[1]);
+    var answers2 = ["Utah", "Colorado", "California", "Alaska"];
+        $(".answer-a").text(answers2[0]);
+        $(".answer-b").text(answers2[1]);
+        $(".answer-c").text(answers2[2]);
+        $(".answer-d").text(answers2[3]);
+        run();
+
+        function clearData ()  {
+            $(".question").remove();
+            $(".answer-a").remove(); 
+            $(".answer-b").remove();
+            $(".answer-c").remove();
+            $(".answer-d").remove();
+            run();
+            stop();
+            } //Ends clearData function
+
+        $(".answer-c").click(function ()  {
+            alert ("You are correct!");
+            clearData();
+        })
+        $(".answer-a").click(function () { 
+            alert ("Wrong! The correct answer is Yellowstone NP")
+            clearData();
+
+        })
+
+        $(".answer-b").click(function () { 
+            alert ("Wrong! The correct answer is Yellowstone NP")
+            clearData();
+        })
+
+        $(".answer-d").click(function () { 
+            alert ("Wrong! The correct answer is Yellowstone NP")
+            clearData();
+        })   
+});
+     }//Ends question02 function
+
+    //*************************************************************************************************
+     //Question 3 
+     function question03()  {
+        +   $("#startButton").click(function () {
+            console.log("start");
+            $("#startButton").remove();
+            $(".question").text(questions[1]);
+            var answers3 = ["Great Smoky Mtns. NP", "Yosemite NP", "Glacier NP", "Yellowstone NP"];
+                $(".answer-a").text(answers3[0]);
+                $(".answer-b").text(answers3[1]);
+                $(".answer-c").text(answers3[2]);
+                $(".answer-d").text(answers3[3]);
+                run();
+        
+                function clearData ()  {
+                    $(".question").remove();
+                    $(".answer-a").remove(); 
+                    $(".answer-b").remove();
+                    $(".answer-c").remove();
+                    $(".answer-d").remove();
+                    run();
+                    stop();
+                    } //Ends clearData function
+        
+                $(".answer-c").click(function ()  {
+                    alert ("Wrong! The correct answer is Yellowstone NP");
+                    clearData();
+                })
+                $(".answer-a").click(function () { 
+                    alert ("You are correct!")
+                    clearData();
+        
+                })
+        
+                $(".answer-b").click(function () { 
+                    alert ("Wrong! The correct answer is Yellowstone NP")
+                    clearData();
+                })
+        
+                $(".answer-d").click(function () { 
+                    alert ("Wrong! The correct answer is Yellowstone NP")
+                    clearData();
+                })   
+        });
+        }//Ends question03 function
+
+
+
+
+
 
     var wins = 0;
     var losses = 0;
-    var number = 45;
     var intervalId;
+    var questions = ["Which U.S. national park was the first park to be established?",
+        "Which U.S. state contains the most national parks?",
+        "Which national park is the most visited?",
+        "This man is considered to be the 'father' of the national parks.",
+        "Which national park is home to the deepest lake in the U.S.?",
+        "How many national parks are there in the U.S.?",
+        "Which of the following is the newest national park?",];
+
+   
+    var answers4 = ["Theodore Roosevelt", "Jim Bridger", "John Muir", "John Wesley Powell"];
+    var answers5 = ["Denali NP", "Crater Lake NP", "Yellowstone NP", "Everglades NP"];
+    var answers6 = ["37", "46", "59", "71"];
+    var answers7 = ["Virgin Islands NP", "Black Canyon of the Gunnison NP", "Denali NP", "Pinnacles NP"];
+
 
     function run() {
+        var number = 30;
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
 
@@ -24,7 +180,7 @@ $(document).ready(function () {
                 //  ...run the stop function.
                 stop();
                 //  Alert the user that time is up.
-                alert("Time Up!");
+                alert("Time's Up!");
             }
 
             function stop() {
@@ -32,92 +188,8 @@ $(document).ready(function () {
                 //  We just pass the name of the interval
                 //  to the clearInterval function.
                 clearInterval(intervalId);
-            }
+            } //Ends stop function
 
-        }
-        function question01() {
-            var question1 = {
-                Question: "Which U.S. national park was the first park to be established",
-                Answer1: "Yosemite NP",
-                Answer2: "Glacier NP",
-                Answer3: "Yellowstone NP",
-                Answer4: "Rocky Mountain NP"
-            }
-        };
-
-        function question02() {
-            var question2 = {
-                Question: "What state contains the most national parks?",
-                Answer1: "Utah",
-                Answer2: "Colorado",
-                Answer3: "California",
-                Answer4: "Alaska"
-            }
-        };
-
-        function question03() {
-            var question3 = {
-                Question: "Which national park is the most visited?",
-                Answer1: "Great Smoky Mtns. NP",
-                Answer2: "Yosemite NP",
-                Answer3: "Glacier NP",
-                Answer4: "Yellowstone NP"
-            }
-        };
-
-        function question04() {
-            var question4 = {
-                Question: "This man is considered to be the 'father' of the national parks.",
-                Answer1: "Theodore Roosevelt",
-                Answer2: "Abraham Lincoln",
-                Answer3: "John Muir",
-                Answer4: "John Wesley Powell"
-            }
-        };
-
-        function question05() {
-            var question5 = {
-                Question: "Which national park is home to the deepest lake in the U.S.?",
-                Answer1: "Denali NP",
-                Answer2: "Crater Lake NP",
-                Answer3: "Yellowstone NP",
-                Answer4: "Everglades NP"
-            }
-        };
-
-        function question06() {
-            var question6 = {
-                Question: "How many national parks are there in the U.S.?",
-                Answer1: "37",
-                Answer2: "46",
-                Answer3: "59",
-                Answer4: "71"
-            }
-        };
-
-        function question07() {
-            var question7 = {
-                Question: "Which of the following is the newest national park?",
-                Answer1: "Virgin Islands NP",
-                Answer2: "Black Canyon of the Gunnison NP",
-                Answer3: "Denali NP",
-                Answer4: "Pinnacles NP"
-            }
-        };
-
-
-
-        //ANSWERS
-        //1-Yellowstone (March 1st, 1872)
-        //2-California (9)
-        //3-Great Smoky Mountains (11.3 mil 2016)
-        //4-John Muir
-        //5-Crater Lake, OR (1949')
-        //6-59
-        //7-Pinnacles, CA (January 10th, 2013)
-
-
-        //Click event to begin game
-        //Build functions
-
-    }});
+        } //Ends decrement function
+    } //Ends run function
+});
